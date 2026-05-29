@@ -1,5 +1,6 @@
 import JobCard from "../components/JobCard";
 import RootLayout from "../components/layout";
+import Link from "next/link";
 
 export default function JobsPage() {
       const Jobs = [
@@ -22,15 +23,15 @@ export default function JobsPage() {
         ) : (
           <div className="flex flex-col gap-4 p-4">
             {Jobs.map((job) => (
-              <div key={job.id}>
-                <JobCard
-                  title={job.title}
-                  company={job.company}
-                  budget={job.budget}
-                  featured={job.featured}
-                  remote={job.remote}
-                />
-              </div>
+              <Link key={job.id} href={`/jobs/${job.id}`} className="block ">
+                <div key={job.id}>
+                  <JobCard
+                    title={job.title}
+                    company={job.company}
+                    budget={job.budget}
+                  />
+                </div>
+              </Link>
             ))}
           </div>
         )}
