@@ -3,17 +3,14 @@ import Navbar from "./Navbar"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
-            <body>
-                <Navbar/>
-                <main>
-                    {children}
-                </main>
-                <footer className="bg-gray-300 p-4 text-center text-gray-600">
-                    &copy; 2026 FreelanceHub
-                </footer>
-
-            </body>
-        </html>
+        <>
+            <Navbar />
+            <main>
+                {children}
+            </main>
+            <footer className="bg-gray-300 p-4 text-center text-gray-600">
+                &copy; 2026 FreelanceHub
+            </footer>
+        </>
     )
 }

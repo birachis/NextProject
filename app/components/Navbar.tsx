@@ -6,6 +6,7 @@ export default function Navbar() {
             <div className="space-x-4">
                 <a href="/skills" className="text-blue-500 hover:underline">Skills</a>
                 <a href="/jobs" className="text-blue-500 hover:underline">Jobs</a>
+                <a href="/freelancers" className="text-blue-500 hover:underline">Freelancers</a>
                 <a href="/login" className="text-blue-500 hover:underline">Login</a>
                 <a href="/register" className="text-blue-500 hover:underline">Register</a>
                 

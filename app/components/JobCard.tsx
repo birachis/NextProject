@@ -1,15 +1,13 @@
 
 "use client"
 
+import Link from "next/link"
 import { useState } from "react"
 
 type JobCardProps = {
+    id: number
     title: string
-    budget: string
-    company: string
-    featured?: boolean
-    remote?: boolean
-    applied?: boolean
+    body: string
 }
 
 export default function JobCard(
@@ -21,10 +19,13 @@ export default function JobCard(
         setApplied(true)
     }
     return (
-        <div className=" rounded-lg p-4 shadow-md text-left border mx-auto m-4 flex justify-between items-center">
-            <h2 className="text-blue-700 text-lg">{props.title}</h2>
-            <h2 className="text-gray-700">{props.company}</h2>
-            <h2 className="text-green-500">${props.budget}</h2>
+        <div className=" rounded-lg p-4 shadow-md text-left border mx-10 flex justify-between items-center">
+                <Link key={props.id} href={`/jobs/${props.id}`} className="block ">
+                    <div>
+                        <h2 className="text-blue-700 text-lg">{props.title}</h2>
+                        <h2 className="text-gray-700">{props.body}</h2>
+                    </div>
+                </Link>
             <button 
                 onClick={handleApply}
                 className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${Applied ? 'bg-green-500 hover:bg-green-700' : ''}`}
